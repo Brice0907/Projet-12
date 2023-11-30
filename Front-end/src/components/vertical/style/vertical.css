@@ -1,0 +1,34 @@
+.vertical {
+    min-height: 840px;
+    background-color: #020203;
+    width: 117px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-top: 80px;
+    padding-bottom: 25px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.vertical_button {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.vertical_button_logo {
+    border-radius: 5px;
+    height: 64px;
+    width: 64px;
+    background-color: white;
+}
+
+.vertical_text {
+    transform: rotate(-90deg);
+    color: white;
+    width: 190px;
+    font-size: 15px;
+}

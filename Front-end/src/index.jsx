@@ -4,6 +4,7 @@ import './styles/index.css';
 import Root from './root/root';
 import Home from './page/home/home.jsx';
 import Build from './page/build/build.jsx';
+import Main from './page/main/main.jsx';
 
 
 const router = createBrowserRouter([
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       {
         path: '/build',
         element: <Build />,
+      },
+      {
+        path: '/user/:id',
+        element: <Main />,
       }
     ],
   },

@@ -9,3 +9,25 @@
 .home_title_red {
     color: #FF0101;
 }
+
+.home_text {
+    font-size: 19px;
+    margin-top: 20px;
+}
+
+.home_bloc {
+    margin-top: 45px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.home_bloc_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: #282D30;
+    height: 40px;
+    width: 130px;
+    border-radius: 5px;
+}

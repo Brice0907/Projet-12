@@ -1,0 +1,16 @@
+.welcome {
+    padding: 50px 80px;
+}
+
+.welcome_title {
+    font-size: 34px;
+}
+
+.welcome_title_red {
+    color: #FF0101;
+}
+
+.welcome_texte {
+    font-size: 19px;
+    margin-top: 20px;
+}

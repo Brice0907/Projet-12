@@ -1,0 +1,51 @@
+.graphique {
+    width: 950px;
+    height: 340px;
+    margin-left: 80px;
+    background-color: #FBFBFB;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.02);
+    border-radius: 5px;
+    padding: 20px 15px;
+    padding-bottom: 35px;
+}
+
+.graphique_bloc {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.graphique_bloc_title {
+    margin-left: 30px;
+    font-size: 18px;
+}
+
+.graphique_bloc_legend {
+    display: flex;
+}
+
+.graphique_bloc_legend_kg {
+    margin-right: 25px;
+    display: flex;
+    align-items: center;
+    color: #74798C;
+}
+
+.graphique_bloc_legend_kg_color {
+    margin-right: 8px;
+}
+
+.custom_tooltip {
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+    justify-content: space-around;
+    align-items: center;
+    background-color: red;
+    padding: 10px 8px;
+}
+
+.custom_tooltip_text {
+    color: white;
+}

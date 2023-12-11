@@ -1,37 +1,49 @@
+/* eslint-disable react/prop-types */
 import './style/graphiqueBar.css'
-import { BarChart, Bar, Rectangle, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-import { useState, useEffect } from 'react';
+import { BarChart, Bar, Rectangle, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import ovalRed from './assets/ovalred.svg';
+import ovalBlack from './assets/ovalblack.svg'
 
-// eslint-disable-next-line react/prop-types
-function GraphiqueBar({ userId }) {
+function GraphiqueBar({ activity }) {
 
-    // const [activity, setActivity] = useState(null)
+    // console.log(activity);
 
-    // useEffect(() => {
-    //     fetch('http://localhost:3000/user/' + userId + '/activity')
-    //         .then((response) => {
-    //             if (!response.ok) {
-    //                 throw new Error('Reponse is not ok.');
-    //             }
-    //             return response.json();
-    //         })
-    //         .then((userActivity) => {
-    //             setActivity(userActivity);
-    //             console.log(userActivity);
-    //         })
-    //         .catch(() => {
-    //             console.error("C'est l'erreur catch");
-    //         })
-    // }, [userId]);
-    // console.log('activity', activity);
+    const CustomTooltip = ({ active, payload }) => {
+        if (active && payload && payload.length) {
+            return (
+                <div className="custom_tooltip">
+                    <p className="custom_tooltip_text">{`${payload[0].value}`}kg</p>
+                    <p className="custom_tooltip_text">{`${payload[1].value}`}Kcal</p>
+                </div>
+            );
+        }
+        return null;
+    };
 
-    return <div className='graphique'>
-        blabla
+    return <>
+        {activity &&
+            <div className='graphique'>
+                <div className='graphique_bloc'>
+                    <h2 className='graphique_bloc_title'>Activité quotidienne</h2>
+                    <div className='graphique_bloc_legend'>
+                        <div className='graphique_bloc_legend_kg'><img src={ovalBlack} alt="" className='graphique_bloc_legend_kg_color' />Poids (kg)</div>
+                        <div className='graphique_bloc_legend_kg'><img src={ovalRed} alt="" className='graphique_bloc_legend_kg_color' />Calories brûlées (kCal)</div>
+                    </div>
+                </div>
+                <ResponsiveContainer width="100%" height='100%'>
+                    <BarChart width={500} height={0} data={activity.data.sessions}>
+                        <CartesianGrid vertical={false} strokeDasharray="2" />
+                        <XAxis dataKey="day" axisLine={false} tickLine={false} />
+                        <YAxis orientation={'right'} axisLine={false} tickLine={false} />
+                        <Tooltip content={<CustomTooltip />} />
+                        <Bar dataKey="kilogram" barSize={13} radius={[7, 7, 0, 0]} fill="#282D30" activeBar={<Rectangle stroke="blue" />} />
+                        <Bar dataKey="calories" barSize={13} radius={[7, 7, 0, 0]} fill="#E60000" activeBar={<Rectangle stroke="purple" />} />
+                    </BarChart>
+                </ResponsiveContainer>
+            </div>
 
-        <BarChart width={835} height={320} data={'activity.data.sessions'}>
-        </BarChart>
-
-    </div>
+        }
+    </>
 }
 
 export default GraphiqueBar

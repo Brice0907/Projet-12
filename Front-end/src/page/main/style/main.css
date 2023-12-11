@@ -1,0 +1,13 @@
+.main_bloc {
+    width: 100%;
+}
+
+.main_display {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main_display_stat {
+    padding-left: 75px;
+    padding-right: 275px;
+}

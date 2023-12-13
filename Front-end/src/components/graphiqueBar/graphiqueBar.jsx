@@ -6,7 +6,7 @@ import ovalBlack from './assets/ovalblack.svg'
 
 function GraphiqueBar({ activity }) {
 
-    // console.log(activity);
+    // console.log('activity', activity);
 
     const CustomTooltip = ({ active, payload }) => {
         if (active && payload && payload.length) {

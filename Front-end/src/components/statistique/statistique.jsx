@@ -6,7 +6,9 @@ import lipides from './assets/fat-icon.png'
 import glucides from './assets/carbs-icon.png'
 
 function Statistique({ userData }) {
-    // console.log('data', userData);
+
+    console.log('data', userData);
+
     return <div className='stat'>
 
         <div className='stat_bloc'>

@@ -1,3 +1,10 @@
+.stat {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .stat_bloc {
     display: flex;
     align-items: center;
@@ -7,7 +14,6 @@
     border-radius: 5px;
     background: #FBFBFB;
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.02);
-    margin-bottom: 40px;
 }
 
 .stat_bloc_text {
@@ -24,4 +30,18 @@
     font-size: 14px;
     color: #74798C;
     font-weight: 500;
+}
+
+@media screen and (max-width:1450px) {
+    .stat {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin-top: 20px;
+    }
+
+    .stat_bloc {
+        margin: 10px;
+    }
 }

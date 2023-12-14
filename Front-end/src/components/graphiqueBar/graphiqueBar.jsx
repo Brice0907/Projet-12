@@ -1,12 +1,13 @@
 /* eslint-disable react/prop-types */
 import './style/graphiqueBar.css'
-import { BarChart, Bar, Rectangle, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import ovalRed from './assets/ovalred.svg';
 import ovalBlack from './assets/ovalblack.svg'
 
+
 function GraphiqueBar({ activity }) {
 
-    // console.log('activity', activity);
+    console.log('activity', activity);
 
     const CustomTooltip = ({ active, payload }) => {
         if (active && payload && payload.length) {
@@ -31,13 +32,13 @@ function GraphiqueBar({ activity }) {
                     </div>
                 </div>
                 <ResponsiveContainer width="100%" height='100%'>
-                    <BarChart width={500} height={0} data={activity.data.sessions}>
+                    <BarChart width={500} height={500} data={activity.data.sessions}>
                         <CartesianGrid vertical={false} strokeDasharray="2" />
-                        <XAxis dataKey="day" axisLine={false} tickLine={false} />
+                        <XAxis dataKey={activity.data.sessions.index} axisLine={false} tickLine={false} />
                         <YAxis orientation={'right'} axisLine={false} tickLine={false} />
                         <Tooltip content={<CustomTooltip />} />
-                        <Bar dataKey="kilogram" barSize={13} radius={[7, 7, 0, 0]} fill="#282D30" activeBar={<Rectangle stroke="blue" />} />
-                        <Bar dataKey="calories" barSize={13} radius={[7, 7, 0, 0]} fill="#E60000" activeBar={<Rectangle stroke="purple" />} />
+                        <Bar dataKey="kilogram" barSize={13} radius={[7, 7, 0, 0]} fill="#282D30" />
+                        <Bar dataKey="calories" barSize={13} radius={[7, 7, 0, 0]} fill="#E60000" />
                     </BarChart>
                 </ResponsiveContainer>
             </div>

@@ -25,7 +25,7 @@ export default function Main() {
         <div className='main_display'>
             <div>
                 {activity && <GraphiqueBar activity={activity} />}
-                <div className='main_display'>
+                <div className='main_display_graph'>
                     {session && <GraphiqueLine session={session} />}
                     {performance && <GraphiqueRadar performance={performance} />}
                     {user && <GraphiqueRadial data={user} />}

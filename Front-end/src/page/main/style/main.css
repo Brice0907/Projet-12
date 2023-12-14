@@ -3,11 +3,32 @@
 }
 
 .main_display {
+    max-width: 1350px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
 }
 
+.main_display_graph {
+    padding-left: 80px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
 .main_display_stat {
-    padding-left: 75px;
-    padding-right: 275px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+@media screen and (max-width:1450px) {
+    .main_display {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main_display_graph {
+        padding-right: 40px;
+        padding-left: 40px;
+    }
 }

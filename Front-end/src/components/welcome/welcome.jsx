@@ -4,7 +4,7 @@ function welcome({ name }) {
 
     return <div className="welcome">
         <h1 className='welcome_title'>Bonjour <span className="welcome_title_red">{name}</span></h1>
-        <div className='welcome_texte'>Félicitation ! Vous avez explosé vos objectifs hier 👏</div>
+        <div className='welcome_texte'>Félicitations ! Vous avez explosé vos objectifs hier 👏</div>
     </div>
 }
 

@@ -1,11 +1,12 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { USER_MAIN_DATA_MOCKED } from '../mocks/mockUser.js';
 
 export default function DataUser() {
     const id = useParams();
     const userId = id.id
 
-    const [user, setUser] = useState(null)
+    const [user, setUser] = useState(null);
 
     useEffect(() => {
         fetch('http://localhost:3000/user/' + userId)
@@ -20,7 +21,13 @@ export default function DataUser() {
                 console.log(userData);
             })
             .catch(() => {
-                console.error("C'est l'erreur catch");
+                const userData = USER_MAIN_DATA_MOCKED.find((user) => user.id === Number(userId));
+                console.log(userData);
+                if (userData) {
+                    setUser({ data: userData });
+                } else {
+                    console.error("No user found in mock data");
+                }
             })
     }, [userId]);
 

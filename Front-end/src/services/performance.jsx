@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { USER_PERFORMANCE_MOCKED } from '../mocks/mockPerformance.js'
 
 export default function PerformanceUser() {
     const id = useParams();
@@ -20,7 +21,13 @@ export default function PerformanceUser() {
                 console.log(userData);
             })
             .catch(() => {
-                console.error("C'est l'erreur catch");
+                const userData = USER_PERFORMANCE_MOCKED.find((performance) => performance.userId === Number(userId));
+                console.log(userData);
+                if (userData) {
+                    setPerformance({ data: userData });
+                } else {
+                    console.error("No user found in mock data");
+                }
             })
     }, [userId]);
 

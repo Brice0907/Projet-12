@@ -1,5 +1,5 @@
 import './style/main.css'
-import dataUser from '../../services/data.jsx'
+import dataUser from '../../services/user.jsx'
 import Welcome from '../../components/welcome/welcome.jsx';
 import GraphiqueBar from '../../components/graphiqueBar/graphiqueBar.jsx';
 import activityUser from '../../services/activity.jsx';

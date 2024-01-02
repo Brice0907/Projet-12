@@ -7,7 +7,7 @@ function Header() {
         <nav className='header_nav'>
             <div className='header_nav_logo'><img src={logo} alt="Logo" className='header_nav_logo_img' />SportSee</div>
             <Link to="/" className='link'>
-                <div className='header_nav_button'>Acceuil</div>
+                <div className='header_nav_button'>Accueil</div>
             </Link>
             <Link to='/build' className='link'>
                 <div className='header_nav_button'>Profil</div>

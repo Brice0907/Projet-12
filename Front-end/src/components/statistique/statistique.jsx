@@ -7,7 +7,7 @@ import glucides from './assets/carbs-icon.png'
 
 function Statistique({ userData }) {
 
-    console.log('data', userData);
+    // console.log('data', userData);
     const cal = userData.data.keyData.calorieCount
 
     function separator(cal) {
@@ -15,8 +15,6 @@ function Statistique({ userData }) {
         str[0] = str[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',')
         return str.join('.');
     }
-
-    console.log();
 
     return <div className='stat'>
 

@@ -9,26 +9,26 @@ export default function ActivityUser() {
     const [activity, setActivity] = useState(null)
 
     useEffect(() => {
-        fetch('http://localhost:3000/user/' + userId + '/activity')
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error('Reponse is not ok.');
-                }
-                return response.json();
-            })
-            .then((userData) => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch('http://localhost:3000/user/' + userId + '/activity');
+                const userData = await response.json();
+
                 setActivity(userData);
-                console.log(userData);
-            })
-            .catch(() => {
+                // console.log(userData);
+            } catch (error) {
                 const userData = USER_ACTIVITY.find((activity) => activity.userId === Number(userId));
                 console.log(userData);
+
                 if (userData) {
                     setActivity({ data: userData });
                 } else {
                     console.error("No user found in mock data");
                 }
-            })
+            }
+        };
+
+        fetchData();
     }, [userId]);
 
     return activity;

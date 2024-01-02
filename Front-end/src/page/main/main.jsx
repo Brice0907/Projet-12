@@ -23,7 +23,7 @@ export default function Main() {
         </div>
 
         <div className='main_display'>
-            <div>
+            <div className='main_display_resp'>
                 {activity && <GraphiqueBar activity={activity} />}
                 <div className='main_display_graph'>
                     {session && <GraphiqueLine session={session} />}
@@ -33,7 +33,5 @@ export default function Main() {
             </div>
             <div className='main_display_stat'>{user && <Statistique userData={user} />}</div>
         </div>
-
-
     </div>
 }

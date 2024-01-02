@@ -54,3 +54,23 @@
 .recharts-active-dot {
     display: none;
 }
+
+@media screen and (max-width:1240px) {
+    .line {
+        height: 240px;
+        width: 230px;
+    }
+
+    .custom_background {
+        height: 240px;
+        transform: translateY(-233px);
+    }
+
+    .custom_legend {
+        transform: translateY(-215px);
+    }
+
+    .recharts-line {
+        transform: scaleX(1.15)translateX(-15px);
+    }
+}

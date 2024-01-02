@@ -9,26 +9,26 @@ export default function DataUser() {
     const [user, setUser] = useState(null);
 
     useEffect(() => {
-        fetch('http://localhost:3000/user/' + userId)
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error('Reponse is not ok.');
-                }
-                return response.json();
-            })
-            .then((userData) => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch('http://localhost:3000/user/' + userId);
+                const userData = await response.json();
+
                 setUser(userData);
-                console.log(userData);
-            })
-            .catch(() => {
+                // console.log(userData);
+            } catch (error) {
                 const userData = USER_MAIN_DATA_MOCKED.find((user) => user.id === Number(userId));
                 console.log(userData);
+
                 if (userData) {
                     setUser({ data: userData });
                 } else {
                     console.error("No user found in mock data");
                 }
-            })
+            }
+        };
+
+        fetchData();
     }, [userId]);
 
     return user;

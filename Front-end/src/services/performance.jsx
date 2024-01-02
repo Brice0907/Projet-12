@@ -9,26 +9,26 @@ export default function PerformanceUser() {
     const [performance, setPerformance] = useState(null)
 
     useEffect(() => {
-        fetch('http://localhost:3000/user/' + userId + '/performance')
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error('Reponse is not ok.');
-                }
-                return response.json();
-            })
-            .then((userData) => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch('http://localhost:3000/user/' + userId + '/performance');
+                const userData = await response.json();
+
                 setPerformance(userData);
-                console.log(userData);
-            })
-            .catch(() => {
+                // console.log(userData);
+            } catch (error) {
                 const userData = USER_PERFORMANCE_MOCKED.find((performance) => performance.userId === Number(userId));
                 console.log(userData);
+
                 if (userData) {
                     setPerformance({ data: userData });
                 } else {
                     console.error("No user found in mock data");
                 }
-            })
+            }
+        };
+
+        fetchData();
     }, [userId]);
 
     return performance;

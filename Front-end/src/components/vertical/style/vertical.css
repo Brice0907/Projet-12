@@ -1,5 +1,4 @@
 .vertical {
-    min-height: 840px;
     background-color: #020203;
     width: 117px;
     display: flex;
@@ -31,4 +30,11 @@
     color: white;
     width: 190px;
     font-size: 15px;
+}
+
+@media screen and (max-height:820px) {
+    .vertical {
+        padding-top: 0px;
+        padding-bottom: 30px;
+    }
 }

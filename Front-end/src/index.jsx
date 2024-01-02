@@ -5,6 +5,7 @@ import Root from './root/root';
 import Home from './page/home/home.jsx';
 import Build from './page/build/build.jsx';
 import Main from './page/main/main.jsx';
+import Error from './page/error/error.jsx';
 
 
 const router = createBrowserRouter([
@@ -25,6 +26,7 @@ const router = createBrowserRouter([
         element: <Main />,
       }
     ],
+    errorElement: <Error />
   },
 ]);
 

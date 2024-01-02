@@ -12,3 +12,19 @@
     font-size: 11px;
     transform: translateX(-2px) translateY(2px);
 }
+
+@media screen and (max-width:1240px) {
+    .radar {
+        height: 240px;
+        width: 230px;
+    }
+
+    .radar_text {
+        font-size: 10px;
+        transform: translateX(-3px) translateY(2px);
+    }
+
+    .recharts-polar-grid {
+        transform: scale(0.87) translateX(17px) translateY(17px);
+    }
+}

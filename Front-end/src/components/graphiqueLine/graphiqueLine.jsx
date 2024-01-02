@@ -4,7 +4,7 @@ import { LineChart, Line, XAxis, Tooltip, Legend, ResponsiveContainer } from 're
 
 function GraphiqueLine({ session }) {
 
-    console.log('session', session);
+    // console.log('session', session);
 
     const CustomTooltip = ({ active, payload }) => {
         if (active && payload && payload.length) {
@@ -40,7 +40,7 @@ function GraphiqueLine({ session }) {
                 <LineChart width={260} height={250} data={session.data.sessions} margin={{ top: 70, right: 0, left: 0, bottom: 7 }}>
                     <Legend content={CustomLegend} />
                     <XAxis dataKey="day" axisLine={false} tickLine={false} tick={{ fill: '#FFFFFF', opacity: '0.5' }} padding={{ left: 15, right: 15 }} tickFormatter={formatDayInitial} />
-                    <Tooltip content={CustomTooltip} />
+                    <Tooltip content={CustomTooltip} cursor={{ stroke: "rgba(0, 0, 0, 0.1)", strokeWidth: 32, }} />
                     <Line type="basis" dataKey="sessionLength" strokeWidth={2} stroke="url(#gradient)" dot={false} />
                     <defs>
                         <linearGradient id="gradient" x1="0" y1="0" x2="1" y2="0">

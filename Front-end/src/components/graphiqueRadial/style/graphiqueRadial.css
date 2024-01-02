@@ -19,7 +19,7 @@
     z-index: 2;
     border-radius: 50%;
     position: absolute;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     text-align: center;
     width: 153.5px;
     height: 153.5px;
@@ -38,4 +38,33 @@
     font-size: 23px;
     color: black;
     font-weight: 600;
+}
+
+@media screen and (max-width:1240px) {
+    .radial {
+        height: 240px;
+        width: 230px;
+    }
+
+    .radial_bloc {
+        width: 130.5px;
+        height: 130.5px;
+        margin: 53px 51px;
+    }
+
+    .radial_bloc_text {
+        line-height: 19px;
+    }
+
+    .radial_bloc_text_gras {
+        font-size: 19px;
+    }
+
+    .radial_title {
+        position: absolute;
+        margin-top: 15px;
+        margin-left: 15px;
+        font-weight: 500;
+        font-size: 17px;
+    }
 }

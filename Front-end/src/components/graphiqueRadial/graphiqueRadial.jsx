@@ -4,7 +4,7 @@ import { RadialBarChart, RadialBar, ResponsiveContainer } from 'recharts';
 
 function GraphiqueRadial({ data }) {
 
-    console.log('dataaaaaa', data);
+    // console.log('dataaaaaa', data);
 
     const score = data.data.score * 100
 

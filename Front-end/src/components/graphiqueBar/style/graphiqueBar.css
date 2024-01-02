@@ -1,12 +1,12 @@
 .graphique {
     width: 950px;
     height: 300px;
-    margin-left: 80px;
     background-color: #FBFBFB;
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.02);
     border-radius: 5px;
     padding: 20px 15px;
     padding-bottom: 35px;
+    margin-left: 80px;
 }
 
 .graphique_bloc {
@@ -52,7 +52,15 @@
 
 @media screen and (max-width:1450px) {
     .graphique {
-        margin: auto;
-        width: 850px;
+        width: 96%;
+        margin-left: 40px;
+        height: 290px;
+    }
+}
+
+@media screen and (max-width:1240px) {
+    .graphique {
+        width: 100%;
+        margin-left: 5px;
     }
 }

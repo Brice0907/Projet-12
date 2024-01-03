@@ -18,7 +18,7 @@ export default function SessionUser() {
                 // console.log(userData);
             } catch (error) {
                 const userData = USER_AVERAGE_SESSIONS_MOCKED.find((session) => session.userId === Number(userId));
-                console.log(userData);
+                // console.log(userData);
 
                 if (userData) {
                     setSession({ data: userData });

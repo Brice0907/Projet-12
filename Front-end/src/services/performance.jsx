@@ -18,7 +18,7 @@ export default function PerformanceUser() {
                 // console.log(userData);
             } catch (error) {
                 const userData = USER_PERFORMANCE_MOCKED.find((performance) => performance.userId === Number(userId));
-                console.log(userData);
+                // console.log(userData);
 
                 if (userData) {
                     setPerformance({ data: userData });

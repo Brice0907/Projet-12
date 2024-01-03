@@ -18,7 +18,7 @@ export default function ActivityUser() {
                 // console.log(userData);
             } catch (error) {
                 const userData = USER_ACTIVITY.find((activity) => activity.userId === Number(userId));
-                console.log(userData);
+                // console.log(userData);
 
                 if (userData) {
                     setActivity({ data: userData });

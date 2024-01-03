@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import './style/graphiqueLine.css'
-import { LineChart, Line, XAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, XAxis, Tooltip, Legend, ResponsiveContainer, Rectangle } from 'recharts';
 
 function GraphiqueLine({ session }) {
 
@@ -29,9 +29,17 @@ function GraphiqueLine({ session }) {
         return (
             <div>
                 <div className='custom_legend'>Durée moyenne des sessions</div>
-                <div className='custom_background'></div>
             </div>
         );
+    }
+
+    const CustomCursor = ({ points }) => {
+        const X = points[0].x
+        const Y = points[0].y
+
+        return (
+            <Rectangle width={500} height={500} x={X} y={Y - 100} style={{ background: 'red', opacity: 0.1 }} />
+        )
     }
 
     return <>{session &&
@@ -40,7 +48,7 @@ function GraphiqueLine({ session }) {
                 <LineChart width={260} height={250} data={session.data.sessions} margin={{ top: 70, right: 0, left: 0, bottom: 7 }}>
                     <Legend content={CustomLegend} />
                     <XAxis dataKey="day" axisLine={false} tickLine={false} tick={{ fill: '#FFFFFF', opacity: '0.5' }} padding={{ left: 15, right: 15 }} tickFormatter={formatDayInitial} />
-                    <Tooltip content={CustomTooltip} cursor={{ stroke: "rgba(0, 0, 0, 0.1)", strokeWidth: 32, }} />
+                    <Tooltip content={CustomTooltip} cursor={<CustomCursor />} />
                     <Line type="basis" dataKey="sessionLength" strokeWidth={2} stroke="url(#gradient)" dot={false} />
                     <defs>
                         <linearGradient id="gradient" x1="0" y1="0" x2="1" y2="0">

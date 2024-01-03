@@ -18,7 +18,7 @@ export default function DataUser() {
                 // console.log(userData);
             } catch (error) {
                 const userData = USER_MAIN_DATA_MOCKED.find((user) => user.id === Number(userId));
-                console.log(userData);
+                // console.log(userData);
 
                 if (userData) {
                     setUser({ data: userData });
